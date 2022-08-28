@@ -1,0 +1,24 @@
+<div class="row no-gutters">
+    <div class="col-md-2">
+        <a href="detalleinstrumento/{{instrumentoAux.id}}"> <img class="mx-auto d-block"
+                src="{{instrumentoAux.imagen}}" alt="Card image cap"
+                style="width:150px;height:150px;"> </a>
+    </div>
+    <div class="col-md-8">
+        <div class="card-body">
+            <h2 class="card-title">{{instrumentoAux.instrumento}}</h2>
+            <h3 class="card-text">$ {{instrumentoAux.precio}}</h3>
+            <!-- <h4 class="card-text">Costo de envío : {{instrumentoAux.costoEnvio}}</h4> -->
+
+            <!-- Ojo, acá uso un *ngIf y según si el costo de envio es G o no, muestro lo correspondiente -->
+            <!-- Si costoEnvio=='G' muestro la imagen del camión y "Envío gratis a todo el país" -->
+            <h4 class="card-text" *ngIf="instrumentoAux.costoEnvio == 'G'"><img src="assets/images/camion.png"
+                    alt="Card image cap" style="width:25px;height:25px;">Envío gratis a todo el país</h4>
+            <!-- Si costoEnvio NO es 'G' muestro el costo de envío" -->
+            <h4 class="card-text" *ngIf="instrumentoAux.costoEnvio != 'G'">Costo de envío : $
+                {{instrumentoAux.costoEnvio}}</h4>
+            <h5 class="card-text">{{instrumentoAux.cantidadVendida}} vendidos</h5>
+            <br><br><br>
+        </div>
+    </div>
+</div>

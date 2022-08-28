@@ -1,0 +1,36 @@
+<h1>Nuestros Instrumentos</h1>
+
+
+<div class="card mb-4">
+
+
+    <app-item-instrumento *ngFor="let instrumentoLocal of instrumentosArray; let i = index"
+        [instrumentoAux]="instrumentoLocal">
+
+    </app-item-instrumento>
+
+
+    <!-- Esto lo sacamos y lo ponemos en el componente item-instrumento (le sacamos el *ngFor) -->
+
+    <!-- <div class="row no-gutters" *ngFor="let instrumentoAux of instrumentosArray; let i = index">
+        <div class="col-md-2">
+            <a href="detalleinstrumento/{{instrumentoAux.id}}"> <img class="mx-auto d-block"
+                    src="assets/images/{{instrumentoAux.imagen}}" alt="Card image cap"
+                    style="width:150px;height:150px;"> </a>
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h2 class="card-title">{{instrumentoAux.instrumento}}</h2>
+                <h3 class="card-text">$ {{instrumentoAux.precio}}</h3>
+                
+                <h4 class="card-text" *ngIf="instrumentoAux.costoEnvio == 'G'"><img src="assets/images/camion.png"
+                        alt="Card image cap" style="width:25px;height:25px;">Envío gratis a todo el país</h4>
+                
+                <h4 class="card-text" *ngIf="instrumentoAux.costoEnvio != 'G'">Costo de envío : $
+                    {{instrumentoAux.costoEnvio}}</h4>
+                <h5 class="card-text">{{instrumentoAux.cantidadVendida}} vendidos</h5>
+                <br><br><br>
+            </div>
+        </div>
+    </div> -->
+</div>

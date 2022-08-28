@@ -1,0 +1,94 @@
+<p style="text-align: left; padding-left: 200px;">
+    <button [routerLink]="['/formulario', 'nuevo']" type="button" class="btn btn-outline-primary" type="button"
+      name="button">
+      Nuevo Instrumento
+    </button>
+</p>
+
+<!-- <div>
+    Buscar entre precios
+    <input type="number" v-model="precio1" placeholder="precio1">
+    <input type="number" v-model="precio2" placeholder="precio2">
+
+     <button type="button" @click="getInstrumentosEntrePrecios(precio1, precio2)" class="btn btn-primary mb-3">Buscar</button>
+    <a class="btn btn-primary" @click="getInstrumentosEntrePrecios(precio1, precio2)">Buscar</a>
+</div> -->
+
+
+<div class="container-fluid">
+    <!-- Para que ocupe toda la pantalla, si no sacar el -fluid -->
+    <div class="row">
+        <div class="col">
+            <b>ID</b>
+        </div>
+        <div class="col">
+            <b>Nombre</b>
+        </div>
+        <div class="col">
+            <b>Marca</b>
+        </div>
+        <div class="col">
+            <b>Modelo</b>
+        </div>
+        <div class="col">
+            <b>Precio</b>
+        </div>
+        <div class="col">
+            <b>Costo Envío</b>
+        </div>
+        <div class="col">
+            <b>Cantidad Vendida</b>
+        </div>
+        <div class="col">
+            <b>Detalle</b>
+        </div>
+        <div class="col">
+            <b>Editar</b>
+        </div>
+        <div class="col">
+            <b>Eliminar</b>
+        </div>
+    </div>
+    
+    <div class="row" *ngFor="let instrumento of instrumentosArray; let i = index" style="padding-top: 5px;">
+        <div class="col">
+            {{ instrumento.id }}
+        </div>
+        <div class="col">
+            {{ instrumento.instrumento }}
+        </div>
+        <div class="col">
+            {{ instrumento.marca }}
+        </div>
+        <div class="col">
+            {{ instrumento.modelo }}
+        </div>
+        <div class="col">
+            {{ instrumento.precio }}
+        </div>
+        <div class="col">
+            {{ instrumento.costoEnvio }}
+        </div>
+        <div class="col">
+            {{ instrumento.cantidadVendida }}
+        </div>
+        <div class="col">
+            <button [routerLink]="['/detalleinstrumento', instrumento.id]" type="button" class="btn btn-outline-primary"
+                type="button" name="button">
+                <i class="fas fa-edit"></i> Detalle
+              </button>
+        </div>
+        <div class="col">
+            <button [routerLink]="['/formulario', instrumento.id]" type="button" class="btn btn-outline-success" type="button"
+                name="button">
+                <i class="fas fa-edit"></i> Editar
+              </button>
+        </div>
+         <div class="col">
+            <button (click)="delete(instrumento.id)" type="button" class="btn btn-outline-danger" type="button"
+                name="button">
+                <i class="fas fa-trash-alt"></i> Eliminar
+              </button>
+        </div>
+    </div>
+</div>

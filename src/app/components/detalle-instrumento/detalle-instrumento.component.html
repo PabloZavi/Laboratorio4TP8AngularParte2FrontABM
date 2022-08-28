@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <img alt="instrumento" style="width:300px;height:300px;" src="{{instrumento?.imagen}}" />
+        </div>
+
+        <div class="col">
+            <div class="row">
+                <div class="col">
+                    <h4>{{instrumento?.cantidadVendida}}  vendidos</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h1>{{instrumento?.instrumento}}</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col"><h2>$ {{instrumento?.precio}}</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h4>Marca: {{instrumento?.marca}}</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h4>Modelo: {{instrumento?.modelo}}</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h4 *ngIf="instrumento?.costoEnvio == 'G'">>Envío gratis a todo el país</h4>
+                    <h4 *ngIf="instrumento?.costoEnvio != 'G'">Costo envío: $ {{instrumento?.costoEnvio}}</h4>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col"><a href="/instrumentos">
+                <h3>Volver</h3>
+            </a></div>
+    </div>
+</div>
